@@ -1,0 +1,12 @@
+{
+  "manifest_version": 2,
+  "name": "Thack App",
+  "version": "0.1",
+
+  "description": "This is a pretty cool app, believe me",
+  "default_locale": "en",
+
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  }
+}
