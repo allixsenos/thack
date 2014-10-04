@@ -1,0 +1,11 @@
+{
+  "name": "Thack",
+  "description": "This is a pretty cool app, believe me",
+  "repository": "git@github.com:kvakes/thack.git",
+  "version": "0.0.1",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-compass": "^1.0.1",
+    "grunt-contrib-watch": "~0.6.1"
+  }
+}
