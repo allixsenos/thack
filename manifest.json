@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
   "name": "Placeholder",
-  "version": "0.0.2",
+  "version": "0.0.3",
 
-  "description": "Chrome extension that shows you stunning pictures from amazing places all over the world as well as air fares to those places.",
+  "description": "Whenever you open a new tab, Placeholder shows you a stunning picture from an amazing place as well as how much it costs to fly there.",
 
   "chrome_url_overrides": {
     "newtab": "index.html"
