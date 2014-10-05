@@ -78,6 +78,7 @@
         $('#return-date').text(return_date.format('MMM DD'));
         $('#price').text(price);
         $('#destination').text(destination.gsx$iatacode.$t);
+        $('.book a').attr('href', 'http://www.skyscanner.com/transport/flights/' + fromIATA + '/' + toIATA + '/' + departure_date.format('YYMMDD') + '/' + return_date.format('YYMMDD'));
       });
   };
 
