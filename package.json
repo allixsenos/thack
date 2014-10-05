@@ -2,7 +2,7 @@
   "name": "Placeholder",
   "description": "Chrome extension that shows you stunning pictures from amazing places all over the world as well as air fares to those places.",
   "repository": "git@github.com:kvakes/thack.git",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-contrib-compass": "^1.0.1",
