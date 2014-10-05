@@ -1,4 +1,7 @@
 angular.module('ngAppThack', [])
-  .controller('ImageController', function($scope) {
-    $scope.info = 'INFO';
-  })
+  .controller('DestinationController', function($scope) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      $scope.info = position.coords.latitude + ' X ' + position.coords.longitude;
+      $scope.$apply();
+    });
+  });
