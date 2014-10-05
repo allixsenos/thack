@@ -3,11 +3,15 @@
 <head>
   <title>Thack App</title>
   <link href="css/style.css" rel="stylesheet">
-  <script src="lib/angular/angular.min.js" ng-csp></script>
 </head>
-<body>
+<body ng-app="ngAppThack" ng-csp>
 
-  <div>Loading&hellip;</div>
+  <div ng-controller="ImageController">
+    {{ info }}
+  </div>
+
+  <script src="lib/angular/angular.min.js"></script>
+  <script src="js/app.js"></script>
 
 </body>
 </html>
