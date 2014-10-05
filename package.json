@@ -1,6 +1,6 @@
 {
-  "name": "Thack",
-  "description": "This is a pretty cool app, believe me",
+  "name": "Placeholder",
+  "description": "Chrome extension that shows you stunning pictures from amazing places all over the world as well as air fares to those places.",
   "repository": "git@github.com:kvakes/thack.git",
   "version": "0.0.1",
   "devDependencies": {

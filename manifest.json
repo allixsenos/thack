@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
-  "name": "Thack App",
+  "name": "Placeholder",
   "version": "0.1",
 
-  "description": "This is a pretty cool app, believe me",
+  "description": "Chrome extension that shows you stunning pictures from amazing places all over the world as well as air fares to those places.",
 
   "chrome_url_overrides": {
     "newtab": "index.html"
