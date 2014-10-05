@@ -2,15 +2,31 @@
 <html>
 <head>
   <title>New Tab</title>
+  <link href="lib/normalize.css/normalize.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
 </head>
-<body ng-app="ngAppThack" ng-csp>
+<body>
 
-  <div ng-controller="DestinationController">
-    {{ info }}
+  <div id="scene">
+    <img id="preloader">
+
+    <div class="info">
+      <div class="airports"><span id="my-airport"></span> &rarr; <span id="destination"></span></div>
+      <div class="dates"><span id="departure-date"></span> &mdash; <span id="return-date"></span></div>
+      <div class="book">
+        <a>Book for $<span id="price">&hellip;</span></a>
+      </div>
+    </div>
+
+    <div id="shuffle"><img src="img/shuffle.png"></div>
   </div>
 
-  <script src="lib/angular/angular.min.js"></script>
+  <div class="loading">
+    Loading data&hellip;
+  </div>
+
+  <script src="lib/jquery/dist/jquery.min.js"></script>
+  <script src="lib/moment/moment.js"></script>
   <script src="js/app.js"></script>
 
 </body>

@@ -1,0 +1,103 @@
+/* line 3, ../sass/style.scss */
+body,
+html,
+#scene {
+  height: 100%;
+}
+
+/* line 7, ../sass/style.scss */
+body {
+  background-color: #000;
+  color: #fff;
+}
+
+/* line 12, ../sass/style.scss */
+#scene {
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  opacity: 0;
+  transition: opacity .5s ease-in-out;
+  -webkit-transition: opacity .5s ease-in-out;
+}
+/* line 19, ../sass/style.scss */
+#scene.transition {
+  opacity: 1;
+}
+
+/* line 24, ../sass/style.scss */
+.loading {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+}
+
+/* line 31, ../sass/style.scss */
+.info {
+  position: absolute;
+  bottom: 10%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+/* line 40, ../sass/style.scss */
+.airports,
+.dates {
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.8), 2px 2px rgba(0, 0, 0, 0.8), 3px 3px rgba(0, 0, 0, 0.8), 4px 4px rgba(0, 0, 0, 0.8), 5px 5px rgba(0, 0, 0, 0.8);
+}
+
+/* line 48, ../sass/style.scss */
+.airports {
+  font-size: 50px;
+}
+
+/* line 51, ../sass/style.scss */
+.dates {
+  font-size: 32px;
+}
+
+/* line 54, ../sass/style.scss */
+.book {
+  margin: 20px;
+}
+/* line 57, ../sass/style.scss */
+.book a {
+  display: inline-block;
+  background: #2ecc71;
+  border-bottom: 2px solid #27ae60;
+  border-radius: 2px;
+  color: #fff !important;
+  font-size: 22px;
+  padding: 12px 20px;
+  text-decoration: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+/* line 71, ../sass/style.scss */
+#preloader {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  top: 0;
+  left: 0;
+}
+
+/* line 79, ../sass/style.scss */
+#shuffle {
+  position: absolute;
+  right: 40px;
+  top: 40px;
+  background: #fff;
+  border-bottom: 2px solid #ccc;
+  border-radius: 2px;
+  display: inline-block;
+  padding: 5px;
+  cursor: pointer;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+}
+/* line 91, ../sass/style.scss */
+#shuffle img {
+  display: block;
+}
