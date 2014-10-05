@@ -35,11 +35,12 @@
       var entries = locations[0].feed.entry;
 
       showEntry(fromIATA, entries[Math.floor(Math.random() * entries.length)]);
-      // TODO: shuffle button handler
+      $('#shuffle').on('click', function() {
+        showEntry(fromIATA, entries[Math.floor(Math.random() * entries.length)]);
+      });
     });
 
   function showEntry(fromIATA, destination) {
-    $('#destination').text(destination.gsx$iatacode.$t);
     var photoURL = destination.gsx$photourl.$t;
 
     var imageLoaded = $.Deferred(),
@@ -76,6 +77,7 @@
         $('#departure-date').text(departure_date.format('MMM DD'));
         $('#return-date').text(return_date.format('MMM DD'));
         $('#price').text(price);
+        $('#destination').text(destination.gsx$iatacode.$t);
       });
   };
 
