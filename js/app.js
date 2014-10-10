@@ -20,7 +20,7 @@
 
     $.getJSON('http://api.sandbox.amadeus.com/v1.2/airports/nearest-relevant?latitude=' + lat + '&longitude=' + lng + '&apikey=' + AMADEUS_API_KEY)
       .then(function(airports) {
-        deferred.resolve(airports[0].airport);
+        deferred.resolve(airports[0].city);
       });
 
     return deferred.promise();
