@@ -2,7 +2,7 @@
 
   var AMADEUS_API_KEY = 'AlN6Wa4wNlBfYx9osGST0C8GvXovPfjG';
 
-  var getMyPosition = function() {
+  var getMyLocation = function() {
     var deferred = $.Deferred();
 
     navigator.geolocation.getCurrentPosition(
@@ -13,10 +13,10 @@
     return deferred.promise();
   }
 
-  var getClosestAirportIATA = function(position) {
+  var getClosestAirportIATA = function(myLocation) {
     var deferred = $.Deferred(),
-      lat = position.coords.latitude,
-      lng = position.coords.longitude;
+      lat = myLocation.coords.latitude,
+      lng = myLocation.coords.longitude;
 
     $.getJSON('http://api.sandbox.amadeus.com/v1.2/airports/nearest-relevant?latitude=' + lat + '&longitude=' + lng + '&apikey=' + AMADEUS_API_KEY)
       .then(function(airports) {
@@ -26,19 +26,26 @@
     return deferred.promise();
   }
 
-  var getAirport = $.when(getMyPosition()).pipe(getClosestAirportIATA);
+  var getAirport = $.when(getMyLocation()).pipe(getClosestAirportIATA);
   var loadLocationData = $.getJSON('https://spreadsheets.google.com/feeds/list/1LphH9qoFgw9VdgHmP_fIaAJJzHXfEDhfhwaHMMHaZB8/od6/public/values?alt=json-in-script&callback=?');
 
-  $.when(getAirport, loadLocationData)
-    .then(function(fromIATA, locations) {
-      $('#my-airport').text(fromIATA);
-      var entries = locations[0].feed.entry;
+  $.when(getMyLocation(), getAirport, loadLocationData).then(function(myLocation, fromIATA, locations) {
+    $('#my-airport').text(fromIATA);
 
-      showEntry(fromIATA, entries[Math.floor(Math.random() * entries.length)]);
-      $('#shuffle').on('click', function() {
-        showEntry(fromIATA, entries[Math.floor(Math.random() * entries.length)]);
+    var lat = myLocation.coords.latitude,
+      lng = myLocation.coords.longitude;
+
+    var entries = locations[0].feed.entry,
+      filteredEntries = $.grep(entries, function(item, index) {
+        var distance = Math.sqrt(Math.pow(Math.abs(lat - parseFloat(item.gsx$lat.$t)), 2) + Math.pow(Math.abs(lng - parseFloat(item.gsx$lng.$t)), 2));
+        return distance > 10;
       });
+
+    showEntry(fromIATA, entries[Math.floor(Math.random() * filteredEntries.length)]);
+    $('#shuffle').on('click', function() {
+      showEntry(fromIATA, entries[Math.floor(Math.random() * filteredEntries.length)]);
     });
+  });
 
   function showEntry(fromIATA, destination) {
     var photoURL = destination.gsx$photourl.$t;
