@@ -1,6 +1,6 @@
 {
   "name": "Placeholder",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "dependencies": {
     "jquery": "~2.1.1",
     "moment": "~2.8.3",

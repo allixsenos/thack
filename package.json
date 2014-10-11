@@ -2,7 +2,7 @@
   "name": "Placeholder",
   "description": "Whenever you open a new tab, Placeholder shows you a stunning picture from an amazing place as well as how much it costs to fly there.",
   "repository": "git@github.com:kvakes/thack.git",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-contrib-compass": "^1.0.1",
